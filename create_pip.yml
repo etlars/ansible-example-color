@@ -1,0 +1,11 @@
+- hosts: all
+  tasks: 
+  - name: Creates directory
+    file: 
+      path=/root/.pip 
+      state=directory
+
+  - name: Copy pip.conf
+    copy: 
+      src=/root/.pip/pip.conf 
+      dest=/root/.pip/

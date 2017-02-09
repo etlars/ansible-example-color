@@ -1,0 +1,14 @@
+ansible cent01 -m ping
+ansible all -m ping
+ansible all -a /bin/echo Hello
+ansible all -a /bin/touch ~/Hello_Client_by_ansible
+ansible cent02 -m command -a '/sbin/reboot'
+ansible cent01 -m yum -a "name=sl state=installed" 
+
+ansible all -m copy -a src=test_cowsay.sh dest=/root/
+#ansible-playbook copy.yml
+
+ansible all -a /bin/sh /root/test_cowsay.sh
+ansible all -m command -a '/bin/sh /root/test_cowsay.sh' 
+ansible all -m command -a '/usr/sbin/ntpdate time.bora.net'
+ansible all -m copy -a src=test_cowsay.sh dest=/root/

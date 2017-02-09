@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+  - name: copy
+    copy:
+      src=/root/work/test_cowsay.sh
+      dest=/root/
+      mode=0755
